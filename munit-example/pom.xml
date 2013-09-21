@@ -39,7 +39,7 @@
             <plugin>
                 <groupId>com.tenderowls.opensource</groupId>
                 <artifactId>haxemojos-maven-plugin</artifactId>
-                <version>1.0.1-SNAPSHOT</version>
+                <version>1.0.2-SNAPSHOT</version>
                 <extensions>true</extensions>
                 <configuration>
                     <main>math.Calculator</main>
@@ -52,9 +52,9 @@
                         <phase>test</phase>
 						<configuration>
 							<haxelib>munit</haxelib>
+							<baseDir>${basedir}</baseDir>
 							<arguments>
 								<argument>test</argument>
-								<argument>${basedir}/test.hxml</argument>
 								<argument>${munit.target}</argument>
 							</arguments>
 						</configuration>

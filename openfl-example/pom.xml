@@ -38,7 +38,7 @@
             <plugin>
                 <groupId>com.tenderowls.opensource</groupId>
                 <artifactId>haxemojos-maven-plugin</artifactId>
-                <version>1.0.1-SNAPSHOT</version>
+                <version>1.0.2-SNAPSHOT</version>
                 <extensions>true</extensions>
                 <configuration>
                     <main>piratepig.PiratePig</main>
@@ -78,9 +78,9 @@
 						<phase>compile</phase>
 						<configuration>
 							<haxelib>openfl</haxelib>
+							<baseDir>${basedir}</baseDir>
 							<arguments>
 								<argument>build</argument>
-								<argument>${basedir}/project.xml</argument>
 								<argument>${compile.target}</argument>
 							</arguments>
 						</configuration>
