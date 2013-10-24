@@ -1,0 +1,66 @@
+# Flash as3
+-main TestMain
+-lib munit
+# -lib mlib
+# -lib mcover
+# -cp ../../core/src
+-lib hamcrest
+-cp src
+-cp test
+-swf-version 9
+-swf target/bin/as3_test.swf
+
+--next
+
+# Flash as2
+-main TestMain
+-lib munit
+# -lib mlib
+# -lib mcover
+# -cp ../../core/src
+-lib hamcrest
+-cp src
+-cp test
+-swf-version 8
+-swf target/bin/as2_test.swf
+
+--next
+
+# JavaScript
+-main TestMain
+-lib munit
+# -lib mlib
+# -lib mcover
+# -cp ../../core/src
+-lib hamcrest
+-cp src
+-cp test
+-js target/bin/js_test.js
+
+--next
+
+# Neko
+-main TestMain
+-lib munit
+# -lib mlib
+# -lib mcover
+# -cp ../../core/src
+-lib hamcrest
+-cp src
+-cp test
+-neko target/bin/neko_test.n
+
+
+--next
+
+# CPP
+-main TestMain
+-lib munit
+# -lib mlib
+# -lib mcover
+# -cp ../../core/src
+-lib hamcrest
+-cp src
+-cp test
+-D HXCPP_M32
+-cpp target/bin/cpp_test

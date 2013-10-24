@@ -11,29 +11,30 @@
 
 	<profiles>
 		<profile>
-			<id>flash</id>
+			<id>neko</id>
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>
-				<compile.target>flash</compile.target>
+				<munit.target>-neko</munit.target>
 			</properties>
 		</profile>
 		<profile>
-			<id>html5</id>
+			<id>full</id>
 			<activation>
 				<property>
-					<name>html5</name>
+					<name>full</name>
 				</property>
 			</activation>
 			<properties>
-				<compile.target>html5</compile.target>
+				<munit.target></munit.target>
 			</properties>
 		</profile>
 	</profiles>
 	
     <build>
-        <sourceDirectory>Source</sourceDirectory>
+        <sourceDirectory>src</sourceDirectory>
+		<testSourceDirectory>test</testSourceDirectory>
         <plugins>
             <plugin>
                 <groupId>com.tenderowls.opensource</groupId>
@@ -41,47 +42,20 @@
                 <version>1.0.2-SNAPSHOT</version>
                 <extensions>true</extensions>
                 <configuration>
-                    <main>piratepig.PiratePig</main>
+                    <main>math.Calculator</main>
 					<targets></targets>
 				</configuration>
 				
 				<executions>
 					<execution>
-                        <id>openfl-prepare</id>
-						<phase>validate</phase>
+                        <id>munit-test</id>
+                        <phase>test</phase>
 						<configuration>
-							<haxelib>openfl</haxelib>
-							<arguments>
-								<argument>setup</argument>
-							</arguments>
-						</configuration>
-						<goals>
-							<goal>haxelibRun</goal>
-						</goals>
-					</execution>
-					<execution>
-                        <id>openfl-setup-target</id>
-                        <phase>validate</phase>
-						<configuration>
-							<haxelib>openfl</haxelib>
-							<arguments>
-								<argument>setup</argument>
-								<argument>${compile.target}</argument>
-							</arguments>
-						</configuration>
-						<goals>
-							<goal>haxelibRun</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>openfl-compile</id>
-						<phase>compile</phase>
-						<configuration>
-							<haxelib>openfl</haxelib>
+							<haxelib>munit</haxelib>
 							<baseDir>${basedir}</baseDir>
 							<arguments>
-								<argument>build</argument>
-								<argument>${compile.target}</argument>
+								<argument>test</argument>
+								<argument>${munit.target}</argument>
 							</arguments>
 						</configuration>
 						<goals>
@@ -117,8 +91,8 @@
         </dependency>
 		<dependency>
             <groupId>lib.haxe.org</groupId>
-            <artifactId>actuate</artifactId>
-            <version>1.6.3</version>
+            <artifactId>munit</artifactId>
+            <version>2.0.2</version>
             <type>haxelib</type>
         </dependency>
     </dependencies>
